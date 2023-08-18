@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <h1>DEMO POST AFTER ROUTING</h1>
+    <h1>Demo AFTER Routing</h1>
     <div v-if="loading" class="loading">Loading...</div>
 
     <div v-if="error" class="error">{{ error }}</div>

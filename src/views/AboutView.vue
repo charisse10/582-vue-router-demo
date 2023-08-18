@@ -2,26 +2,30 @@
   <div class="about">
     <h1>This is an about page</h1>
     <h2>Demo with programatic routing</h2>
-    <h3>With ID</h3>
+
+    <!-- <h3>With ID</h3>
     <div v-for="x in users" :key="x.id">
       <div :data-clickid="x.id" @click="handleCustomRouteId(x.id)">
         {{ x.name }}
       </div>
-    </div>
+    </div> -->
+
     <h3>With Event</h3>
     <div v-for="x in users" :key="x.id">
       <div :data-clickid="x.id" @click="handleCustomRouteEvent">
         {{ x.name }}
       </div>
     </div>
+
     <h2>Demo with users list</h2>
     <div v-for="x in users" :key="x.id">
       <router-link :to="'/demo/' + x.id">User {{ x.id }}</router-link>
     </div>
-    <h2>Demo with just numbers array</h2>
+
+    <!-- <h2>Demo with just numbers array</h2>
     <div v-for="x in [1, 2, 3, 4, 5, 6, 7]" :key="x">
       <router-link :to="'/demo/' + x">User {{ x }}</router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <h1>DEMO POST BEFORE ROUTING</h1>
+    <h1>Demo BEFORE Routing</h1>
     <div v-if="error" class="error">{{ error }}</div>
 
     <div v-if="post" class="content">
@@ -35,6 +35,7 @@ export default {
         getPost(to.params.id, (err, post) => {
           // `vm` is the component instance
           vm.setData(err, post);
+          console.log(from);
         });
       });
     }, 3000);
