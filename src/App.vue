@@ -1,24 +1,17 @@
 <template>
-  <nav>
-    <div @click="this.$router.go(-1)">Go Back</div>
-    <div @click="this.$router.go(1)">Go Forward</div>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/demo/0">Demo</router-link> |
-    <div @click="this.$router.push({ name: 'prop', params: { id: 1 } })">
-      Prop
-    </div>
-  </nav>
+  <NavBar />
   <router-view />
   <PropRouteView id="30000"></PropRouteView>
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
 import PropRouteView from "./views/PropRouteView.vue";
 
 export default {
   name: "App",
   components: {
+    NavBar,
     PropRouteView,
   },
 };

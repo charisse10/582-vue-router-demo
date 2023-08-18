@@ -1,5 +1,6 @@
 <template>
   <div class="demo">
+    <demo-post />
     <h1>This is a demo page</h1>
     <p>{{ $route.params }}</p>
     <p>{{ users }}</p>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import DemoPost from "../components/DemoPost.vue";
 const users = [
   {
     id: 1,
@@ -24,9 +26,13 @@ const users = [
 ];
 export default {
   name: "DemoView",
+  components: {
+    DemoPost,
+  },
   data() {
     return {
       users,
+      disabled: false,
     };
   },
   computed: {

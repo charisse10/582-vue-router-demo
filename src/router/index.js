@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DemoView from "../views/DemoView.vue";
 import PropRouteView from "../views/PropRouteView.vue";
+import DemoPostBefore from "../components/DemoPostBefore.vue";
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     component: DemoView,
   },
   {
+    path: "/before/:id",
+    name: "before",
+    component: DemoPostBefore,
+  },
+  {
     path: "/about",
     name: "about",
     // route level code-splitting
@@ -34,6 +40,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+const isAuthenticated = true;
+
+// GOOD
+router.beforeEach((to, from, next) => {
+  if (to.name !== "home" && !isAuthenticated) next({ name: "home" });
+  else next();
 });
 
 export default router;
